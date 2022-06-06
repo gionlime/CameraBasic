@@ -1,10 +1,10 @@
 package com.example;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.camera1.Camera1Activity;
 import com.example.camera2.Camera2Activity;
@@ -15,7 +15,6 @@ import com.example.camerax.R;
 //saus: https://codelabs.developers.google.com/codelabs/camerax-getting-started/
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
 
 
     @Override
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btn_camera1:
                 startActivity(new Intent(this, Camera1Activity.class));
                 break;
