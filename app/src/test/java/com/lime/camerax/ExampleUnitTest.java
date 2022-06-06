@@ -1,4 +1,4 @@
-package com.example.camerax;
+package com.lime.camerax;
 
 import static org.junit.Assert.assertEquals;
 

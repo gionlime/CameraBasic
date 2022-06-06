@@ -1,4 +1,4 @@
-package com.example.camera1;
+package com.lime.camera1;
 
 import android.app.AlertDialog;
 import android.hardware.Camera;

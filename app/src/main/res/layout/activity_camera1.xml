@@ -17,7 +17,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.camera1.Camera1Preview
+    <com.lime.camera1.Camera1Preview
         android:id="@+id/surface"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

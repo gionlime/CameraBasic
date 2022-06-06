@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.camera2;
+package com.lime.camera2;
 
 import android.Manifest;
 import android.content.Context;

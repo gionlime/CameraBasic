@@ -1,4 +1,4 @@
-package com.example.camerax;
+package com.lime.camerax;
 
 import android.content.pm.PackageManager;
 import android.graphics.Matrix;
@@ -25,6 +25,8 @@ import androidx.camera.core.PreviewConfig;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LifecycleOwner;
+
+import com.example.camerax.R;
 
 import java.io.File;
 

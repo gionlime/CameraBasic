@@ -1,4 +1,4 @@
-package com.example.camera1;
+package com.lime.camera1;
 
 import android.content.Context;
 import android.graphics.Color;

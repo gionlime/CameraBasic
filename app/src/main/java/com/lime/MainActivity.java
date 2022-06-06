@@ -1,4 +1,4 @@
-package com.example;
+package com.lime;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,9 +6,9 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.camera1.Camera1Activity;
-import com.example.camera2.Camera2Activity;
-import com.example.camerax.CameraXActivity;
+import com.lime.camera1.Camera1Activity;
+import com.lime.camera2.Camera2Activity;
+import com.lime.camerax.CameraXActivity;
 import com.example.camerax.R;
 
 
