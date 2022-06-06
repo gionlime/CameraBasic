@@ -236,7 +236,7 @@ public class Camera2Activity extends AppCompatActivity {
         //Connect to system camera.
         CameraManager manager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
 
-        cameraId = manager.getCameraIdList()[0]; //0 = rear camera.
+        cameraId = manager.getCameraIdList()[1]; //0 = rear camera.
 
         CameraCharacteristics characteristics = manager.getCameraCharacteristics((cameraId));
 

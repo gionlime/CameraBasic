@@ -17,10 +17,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.camera1.Camera1Activity" />
-        <activity android:name=".CameraXActivity" />
-        <activity android:name="com.example.camera2.Camera2Activity" />
-        <activity android:name="com.example.MainActivity">
+        <activity android:name="com.example.camera1.Camera1Activity" android:label="Camera1"/>
+        <activity android:name=".CameraXActivity" android:label="CameraX"/>
+        <activity android:name="com.example.camera2.Camera2Activity" android:label="Camera2"/>
+        <activity android:name="com.example.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

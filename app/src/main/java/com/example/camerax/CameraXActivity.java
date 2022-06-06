@@ -18,7 +18,6 @@ import androidx.lifecycle.LifecycleOwner;
 import android.content.pm.PackageManager;
 import android.graphics.Matrix;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Rational;
 import android.util.Size;
 import android.view.Surface;
@@ -39,7 +38,7 @@ public class CameraXActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camera_x);
+        setContentView(R.layout.activity_camerax);
 
         txView = findViewById(R.id.view_finder);
 
