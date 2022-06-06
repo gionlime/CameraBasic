@@ -29,7 +29,11 @@ import androidx.lifecycle.LifecycleOwner;
 import com.example.camerax.R;
 
 import java.io.File;
-
+/**
+ * create by jeek
+ * 2022/6/6
+ * des:
+ **/
 public class CameraXActivity extends AppCompatActivity {
 
 

@@ -18,10 +18,10 @@ import androidx.annotation.Nullable;
 import java.io.IOException;
 import java.util.List;
 /**
- * A simple wrapper around a Camera and a SurfaceView that renders a centered preview of the Camera
- * to the surface. We need to center the SurfaceView because not all devices have cameras that
- * support preview sizes at the same aspect ratio as the device's display.
- */
+ * create by jeek
+ * 2022/6/6
+ * des:
+ **/
 public class Camera1Preview extends FrameLayout implements SurfaceHolder.Callback {
     private final String TAG = "Preview";
 

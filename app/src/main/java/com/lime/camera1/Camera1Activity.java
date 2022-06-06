@@ -10,9 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.camerax.R;
 
 
-
-// ----------------------------------------------------------------------
-
+/**
+ * create by jeek
+ * 2022/6/6
+ * des:
+ **/
 public class Camera1Activity extends AppCompatActivity implements Camera.PreviewCallback {
     private Camera1Preview mPreview;
     Camera mCamera;

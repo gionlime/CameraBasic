@@ -57,7 +57,11 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+/**
+ * create by jeek
+ * 2022/6/6
+ * des:
+ **/
 public class Camera2Activity extends AppCompatActivity {
 
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();

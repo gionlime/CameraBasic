@@ -12,8 +12,11 @@ import com.lime.camerax.CameraXActivity;
 import com.example.camerax.R;
 
 
-//saus: https://codelabs.developers.google.com/codelabs/camerax-getting-started/
-
+/**
+ * create by jeek
+ * 2022/6/6
+ * des:
+ **/
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
