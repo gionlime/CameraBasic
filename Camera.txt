@@ -1,0 +1,103 @@
+        private class EventHandler extends Handler
+1177      {
+1178          private final Camera mCamera;
+1179
+1180          @UnsupportedAppUsage
+1181          public EventHandler(Camera c, Looper looper) {
+1182              super(looper);
+1183              mCamera = c;
+1184          }
+1185
+1186          @Override
+1187          public void handleMessage(Message msg) {
+1188              switch(msg.what) {
+1189              case CAMERA_MSG_SHUTTER:
+1190                  if (mShutterCallback != null) {
+1191                      mShutterCallback.onShutter();
+1192                  }
+1193                  return;
+1194
+1195              case CAMERA_MSG_RAW_IMAGE:
+1196                  if (mRawImageCallback != null) {
+1197                      mRawImageCallback.onPictureTaken((byte[])msg.obj, mCamera);
+1198                  }
+1199                  return;
+1200
+1201              case CAMERA_MSG_COMPRESSED_IMAGE:
+1202                  if (mJpegCallback != null) {
+1203                      mJpegCallback.onPictureTaken((byte[])msg.obj, mCamera);
+1204                  }
+1205                  return;
+1206
+1207              case CAMERA_MSG_PREVIEW_FRAME:
+1208                  PreviewCallback pCb = mPreviewCallback;
+1209                  if (pCb != null) {
+1210                      if (mOneShot) {
+1211                          // Clear the callback variable before the callback
+1212                          // in case the app calls setPreviewCallback from
+1213                          // the callback function
+1214                          mPreviewCallback = null;
+1215                      } else if (!mWithBuffer) {
+1216                          // We're faking the camera preview mode to prevent
+1217                          // the app from being flooded with preview frames.
+1218                          // Set to oneshot mode again.
+1219                          setHasPreviewCallback(true, false);
+1220                      }
+1221                      pCb.onPreviewFrame((byte[])msg.obj, mCamera);
+1222                  }
+1223                  return;
+1224
+1225              case CAMERA_MSG_POSTVIEW_FRAME:
+1226                  if (mPostviewCallback != null) {
+1227                      mPostviewCallback.onPictureTaken((byte[])msg.obj, mCamera);
+1228                  }
+1229                  return;
+1230
+1231              case CAMERA_MSG_FOCUS:
+1232                  AutoFocusCallback cb = null;
+1233                  synchronized (mAutoFocusCallbackLock) {
+1234                      cb = mAutoFocusCallback;
+1235                  }
+1236                  if (cb != null) {
+1237                      boolean success = msg.arg1 == 0 ? false : true;
+1238                      cb.onAutoFocus(success, mCamera);
+1239                  }
+1240                  return;
+1241
+1242              case CAMERA_MSG_ZOOM:
+1243                  if (mZoomListener != null) {
+1244                      mZoomListener.onZoomChange(msg.arg1, msg.arg2 != 0, mCamera);
+1245                  }
+1246                  return;
+1247
+1248              case CAMERA_MSG_PREVIEW_METADATA:
+1249                  if (mFaceListener != null) {
+1250                      mFaceListener.onFaceDetection((Face[])msg.obj, mCamera);
+1251                  }
+1252                  return;
+1253
+1254              case CAMERA_MSG_ERROR :
+1255                  Log.e(TAG, "Error " + msg.arg1);
+1256                  if (mDetailedErrorCallback != null) {
+1257                      mDetailedErrorCallback.onError(msg.arg1, mCamera);
+1258                  } else if (mErrorCallback != null) {
+1259                      if (msg.arg1 == CAMERA_ERROR_DISABLED) {
+1260                          mErrorCallback.onError(CAMERA_ERROR_EVICTED, mCamera);
+1261                      } else {
+1262                          mErrorCallback.onError(msg.arg1, mCamera);
+1263                      }
+1264                  }
+1265                  return;
+1266
+1267              case CAMERA_MSG_FOCUS_MOVE:
+1268                  if (mAutoFocusMoveCallback != null) {
+1269                      mAutoFocusMoveCallback.onAutoFocusMoving(msg.arg1 == 0 ? false : true, mCamera);
+1270                  }
+1271                  return;
+1272
+1273              default:
+1274                  Log.e(TAG, "Unknown message type " + msg.what);
+1275                  return;
+1276              }
+1277          }
+1278      }
